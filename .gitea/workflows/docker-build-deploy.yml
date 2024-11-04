@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: stuffworks_runner
+    runs-on: deploy
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
