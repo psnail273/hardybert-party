@@ -1,0 +1,32 @@
+name: Build and Deploy Docker Container
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: stuffworks_runner
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Log into Docker Hub
+        env:
+          DOCKER_USERNAME: ${{ secrets.USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
+
+      - name: Build Docker Image
+        run: |
+          docker build -t hardybert-wedding-website:latest .
+
+      - name: Stop and Remove Existing Container
+        run: |
+          docker stop hardybert-wedding-website || true
+          docker rm hardybert-wedding-website || true
+
+      - name: Run New Container
+        run: |
+          docker run -d --name hardybert-wedding-website -p 83:80 my-app:latest --network caddy-network
