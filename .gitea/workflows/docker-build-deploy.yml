@@ -8,30 +8,34 @@ jobs:
   build-and-deploy:
     runs-on: deploy
     steps:
-      - name: Install Node.js
+      - name: Echo Test
         run: |
-          curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-          sudo apt-get install -y nodejs
-          
-      - name: Checkout Code
-        uses: actions/checkout@v3
+          echo "Test"
 
-      - name: Log into Docker Hub
-        env:
-          DOCKER_USERNAME: ${{ secrets.USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.PASSWORD }}
-        run: |
-          echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
+      # - name: Install Node.js
+      #   run: |
+      #     curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+      #     sudo apt-get install -y nodejs
 
-      - name: Build Docker Image
-        run: |
-          docker build -t hardybert-wedding-website:latest .
+      # - name: Checkout Code
+      #   uses: actions/checkout@v3
 
-      - name: Stop and Remove Existing Container
-        run: |
-          docker stop hardybert-wedding-website || true
-          docker rm hardybert-wedding-website || true
+      # - name: Log into Docker Hub
+      #   env:
+      #     DOCKER_USERNAME: ${{ secrets.USERNAME }}
+      #     DOCKER_PASSWORD: ${{ secrets.PASSWORD }}
+      #   run: |
+      #     echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
 
-      - name: Run New Container
-        run: |
-          docker run -d --name hardybert-wedding-website -p 83:80 my-app:latest --network caddy-network
+      # - name: Build Docker Image
+      #   run: |
+      #     docker build -t hardybert-wedding-website:latest .
+
+      # - name: Stop and Remove Existing Container
+      #   run: |
+      #     docker stop hardybert-wedding-website || true
+      #     docker rm hardybert-wedding-website || true
+
+      # - name: Run New Container
+      #   run: |
+      #     docker run -d --name hardybert-wedding-website -p 83:80 my-app:latest --network caddy-network
