@@ -32,18 +32,18 @@ jobs:
           context: .
           push: true
           tags: |
-            git.stuffworks.net/hardybert-wedding-website:latest
-            git.stuffworks.net/hardybert-wedding-website:${{ github.sha }}
-          cache-from: type=registry,ref=git.stuffworks.net/hardybert-wedding-website:latest
+            git.stuffworks.net/psnail273/hardybert-wedding-website:latest
+            git.stuffworks.net/psnail273/hardybert-wedding-website:${{ github.sha }}
+          cache-from: type=registry,ref=git.stuffworks.net/psnail273/hardybert-wedding-website:latest
           cache-to: type=inline
 
       - name: Deploy container
         run: |
-          docker pull git.stuffworks.net/hardybert-wedding-website:latest
-          docker stop nextjs-app || true
-          docker rm nextjs-app || true
+          docker pull git.stuffworks.net/psnail273/hardybert-wedding-website:latest
+          docker stop hardybert-wedding-website || true
+          docker rm hardybert-wedding-website || true
           docker run -d \
             --name hardybert-wedding-website \
             --restart unless-stopped \
             -p 83:80 \
-            git.stuffworks.net/hardybert-wedding-website:latest
+            git.stuffworks.net/psnail273/hardybert-wedding-website:latest
