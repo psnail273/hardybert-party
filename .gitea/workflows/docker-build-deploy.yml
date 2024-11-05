@@ -9,6 +9,7 @@ jobs:
     runs-on: deploy
     steps:
       - name: Verify Node.js
+        uses: actions/setup-node@v3
         run: |
           echo "Node.js version: $(node --version)"
 
