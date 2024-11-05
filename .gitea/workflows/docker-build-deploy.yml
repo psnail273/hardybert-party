@@ -45,5 +45,6 @@ jobs:
           docker run -d \
             --name hardybert-wedding-website \
             --restart unless-stopped \
+            --network caddy-network \
             -p 3005:3000 \
             git.stuffworks.net/psnail273/hardybert-wedding-website:latest
