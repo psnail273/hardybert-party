@@ -8,8 +8,12 @@ jobs:
   build-and-deploy:
     runs-on: deploy
     steps:
-      - name: Verify Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Verify Node.js
         run: |
           echo "Node.js version: $(node --version)"
 
