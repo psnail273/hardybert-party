@@ -1,5 +1,5 @@
+import { HomePage } from '@/components/app-page'
+
 export default function Home() {
-  return (
-    <div>Hello margaret!</div>
-  );
+  return <HomePage />;
 }
