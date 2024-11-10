@@ -9,8 +9,8 @@ import { WEDDING_DATE, WEDDING_LOCATION } from '@/lib/constants'
 export function HomePage() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <header className="py-6 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary">Nicholas & Margaret</h1>
+      <header className="text-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary">Nicholas & Margaret</h1>
       </header>
 
       <main className="flex-grow">
@@ -40,13 +40,14 @@ export function HomePage() {
         </nav>
 
         <section className="container mx-auto px-4 py-12">
-          <div className="relative h-[60vh] max-w-5xl mx-auto">
+          <div className="relative w-full aspect-[16/9] max-w-5xl mx-auto">
             <Image
               src="/HardyBertTree.jpg"
               alt="Nicholas and Margaret"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              priority
+              className="rounded-lg object-cover"
             />
           </div>
         </section>
