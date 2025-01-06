@@ -7,11 +7,12 @@ export default function Home() {
       <Navigation />
 
       {/* Full-width image */}
-      <div className="relative w-4/5 mx-auto aspect-[16/9]">
+      <div className="relative w-4/5 mx-auto">
         <Image
           src="/HardyBertTree.jpg"
           alt="Nicholas and Margaret"
-          layout="fill"
+          width={6000}
+          height={4000}
           priority
         />
       </div>
