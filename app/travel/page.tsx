@@ -32,15 +32,15 @@ export default function Travel() {
           The Cheshire Inn is a family favorite boutique hotel in the Dogtown
           neighborhood just a few minutes from St. James. We have a wedding
           block there for $185 a night, follow this link or call (314) 932-7858
-          and reference the "Hardy/Hilbert Wedding Room Block."
+          and reference the &ldquo;Hardy/Hilbert Wedding Room Block.&rdquo;
         </p>
       </section>
 
       <section className="text-center pt-2 sm:pt-4 md:pt-6 lg:pt-8">
         <p className="max-w-4xl mx-auto px-4">
-          If you're wanting to stay within walking distance of the reception at
-          The City Museum, there are multiple hotel options located in downtown
-          St. Louis. Here are two close to the City Museum:
+          If you&apos;re wanting to stay within walking distance of the
+          reception at The City Museum, there are multiple hotel options located
+          in downtown St. Louis. Here are two close to the City Museum:
         </p>
       </section>
 
@@ -73,7 +73,7 @@ export default function Travel() {
       <section className="text-center py-2 sm:py-4 md:py-6 lg:py-8">
         <p className="max-w-4xl mx-auto px-4">
           There are always a multitude of air bnbs and hotels available. If
-          you're unsure of an area while looking for accomodations, or want
+          you&apos;re unsure of an area while looking for accomodations, or want
           specific neighborhood recommendations, contact Margaret at (314)
           680-4553.
         </p>
@@ -94,11 +94,12 @@ export default function Travel() {
         <p className="max-w-4xl mx-auto px-4">
           Even though the wedding reception at the City Museum does not start
           until 5pm, guests have all day access. This is one of our favorite
-          places and we're so excited to celebrate there with you all. A change
-          of clothes is recommended if you're planning on playing and exploring!
-          If you've never been, it is a large playground/art sculpture built in
-          an old shoe factory. A wonderful documentary came out last year about
-          the museum's creator, Bob Cassily. You can view the trailer here:
+          places and we&apos;re so excited to celebrate there with you all. A
+          change of clothes is recommended if you&apos;re planning on playing
+          and exploring! If you&apos;ve never been, it is a large playground/art
+          sculpture built in an old shoe factory. A wonderful documentary came
+          out last year about the museum&apos;s creator, Bob Cassily. You can
+          view the trailer here:
         </p>
         <a
           className="text-wedding-pink"
@@ -132,8 +133,8 @@ export default function Travel() {
       <section className="text-center pt-2 sm:pt-4 md:pt-6 lg:pt-8">
         <p className="font-semibold">MISSOURI BOTANICAL GARDEN</p>
         <p className="max-w-4xl mx-auto px-4">
-          If you're in the mood for plants, another favorite spot of ours is the
-          Missouri Botanical Garden. It is located in the historic Shaw
+          If you&apos;re in the mood for plants, another favorite spot of ours
+          is the Missouri Botanical Garden. It is located in the historic Shaw
           neighborhood and is close to Tower Grove Park, another great walking
           park.
         </p>
