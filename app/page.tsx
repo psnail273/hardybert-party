@@ -1,28 +1,55 @@
-import Image from 'next/image'
-import Navigation from '@/components/Navigation'
+import Image from "next/image";
+import Navigation from "@/components/Navigation";
+import ImageCarousel from "@/components/ImageCarousel";
 
 export default function Home() {
+  // Array of Heart images - update with your actual image paths
+  const heartImages = [
+    "/HEART1.png",
+    "/HEART2.png",
+    "/HEART3.png",
+    "/HEART4.png",
+    "/HEART5.png",
+    "/HEART6.png",
+    "/HEART7.png",
+    // Add more heart images as needed
+  ];
+
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen">
       <Navigation />
 
-      {/* Full-width image */}
-      <div className="relative w-4/5 mx-auto">
+      {/* Names */}
+      <div className="relative w-1/2 lg:w-1/3 xl:w-1/4 mx-auto">
         <Image
-          src="/HardyBertTree.jpg"
+          src="/NANDMMARRIED.png"
           alt="Nicholas and Margaret"
-          width={6000}
-          height={4000}
+          width={1955}
+          height={1063}
           priority
         />
       </div>
 
+      {/* Carousel of Heart Images */}
+      <div className="my-8 w-1/3 mx-auto">
+        <ImageCarousel
+          images={heartImages}
+          interval={6000}
+          width={2393}
+          height={2308}
+        />
+      </div>
+
       {/* Wedding details */}
-      <div className="text-center py-12 bg-white">
-        <h2 className="text-3xl font-serif mb-2">September 6th, 2025</h2>
-        <p className="text-xl">St. Louis, MO</p>
+      <div className="relative w-1/2 lg:w-1/3 xl:w-1/4 mx-auto">
+        <Image
+          src="/DATE.png"
+          alt="The Big Day"
+          width={1313}
+          height={690}
+          priority
+        />
       </div>
     </div>
-  )
+  );
 }
-

@@ -1,14 +1,19 @@
-import Navigation from '@/components/Navigation'
+import Navigation from "@/components/Navigation";
+import Image from "next/image";
 
 export default function RSVP() {
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen">
       <Navigation />
-      <div className="max-w-2xl mx-auto py-12 px-4">
-        <h1 className="text-3xl font-serif mb-8 text-center">RSVP</h1>
-        
-        <p className="text-center text-lg">Coming soon</p>
+      <div className="relative w-1/2 lg:w-1/3 xl:w-1/4 mx-auto">
+        <Image
+          src="/COMINGSOON.png"
+          alt="Coming Soon"
+          width={1682}
+          height={224}
+          priority
+        />
       </div>
     </div>
-  )
-} 
+  );
+}
