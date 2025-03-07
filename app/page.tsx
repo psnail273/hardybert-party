@@ -1,6 +1,5 @@
 import Image from "next/image";
 import ImageCarousel from "@/components/ImageCarousel";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   // Array of Heart images - update with your actual image paths
