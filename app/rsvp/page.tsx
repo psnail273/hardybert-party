@@ -1,10 +1,7 @@
-import Navigation from "@/components/Navigation";
 import Image from "next/image";
-import Footer from "@/components/Footer";
 export default function RSVP() {
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <div className="">
       <div className="relative w-full max-w-md mx-auto px-4">
         <Image
           src="/COMINGSOON.png"
@@ -15,7 +12,6 @@ export default function RSVP() {
           priority
         />
       </div>
-      <Footer />
     </div>
   );
 }

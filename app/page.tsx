@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Navigation from "@/components/Navigation";
 import ImageCarousel from "@/components/ImageCarousel";
 import Footer from "@/components/Footer";
 
@@ -17,9 +16,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
-
+    <div className="">
       {/* Names */}
       <div className="relative w-full max-w-md mx-auto px-4">
         <Image
@@ -33,7 +30,7 @@ export default function Home() {
       </div>
 
       {/* Carousel of Heart Images */}
-      <div className="my-8 w-full max-w-mdmx-auto px-4">
+      <div className="relative w-full max-w-[48rem] mx-auto px-4">
         <ImageCarousel
           images={heartImages}
           interval={6000}
@@ -53,7 +50,6 @@ export default function Home() {
           priority
         />
       </div>
-      <Footer />
     </div>
   );
 }

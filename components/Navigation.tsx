@@ -78,7 +78,7 @@ export default function Navigation() {
               <Link
                 href="/"
                 className={`hover:underline ${
-                  pathname === "/" ? "font-semibold text-wedding-red" : ""
+                  pathname === "/" ? "text-wedding-red" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -89,9 +89,7 @@ export default function Navigation() {
               <Link
                 href="/details"
                 className={`hover:underline ${
-                  pathname === "/details"
-                    ? "font-semibold text-wedding-red"
-                    : ""
+                  pathname === "/details" ? "text-wedding-red" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -102,7 +100,7 @@ export default function Navigation() {
               <Link
                 href="/travel"
                 className={`hover:underline ${
-                  pathname === "/travel" ? "font-semibold text-wedding-red" : ""
+                  pathname === "/travel" ? "text-wedding-red" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -113,7 +111,7 @@ export default function Navigation() {
               <Link
                 href="/rsvp"
                 className={`hover:underline ${
-                  pathname === "/rsvp" ? "font-semibold text-wedding-red" : ""
+                  pathname === "/rsvp" ? "text-wedding-red" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -124,9 +122,7 @@ export default function Navigation() {
               <Link
                 href="/registry"
                 className={`hover:underline ${
-                  pathname === "/registry"
-                    ? "font-semibold text-wedding-red"
-                    : ""
+                  pathname === "/registry" ? "text-wedding-red" : ""
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -142,7 +138,7 @@ export default function Navigation() {
             <Link
               href="/"
               className={`hover:underline ${
-                pathname === "/" ? "font-semibold text-wedding-red" : ""
+                pathname === "/" ? "text-wedding-red" : ""
               }`}
             >
               HOME
@@ -152,7 +148,7 @@ export default function Navigation() {
             <Link
               href="/details"
               className={`hover:underline ${
-                pathname === "/details" ? "font-semibold text-wedding-red" : ""
+                pathname === "/details" ? "text-wedding-red" : ""
               }`}
             >
               DETAILS
@@ -162,7 +158,7 @@ export default function Navigation() {
             <Link
               href="/travel"
               className={`hover:underline ${
-                pathname === "/travel" ? "font-semibold text-wedding-red" : ""
+                pathname === "/travel" ? "text-wedding-red" : ""
               }`}
             >
               TRAVEL
@@ -172,7 +168,7 @@ export default function Navigation() {
             <Link
               href="/rsvp"
               className={`hover:underline ${
-                pathname === "/rsvp" ? "font-semibold text-wedding-red" : ""
+                pathname === "/rsvp" ? "text-wedding-red" : ""
               }`}
             >
               RSVP
@@ -182,7 +178,7 @@ export default function Navigation() {
             <Link
               href="/registry"
               className={`hover:underline ${
-                pathname === "/registry" ? "font-semibold text-wedding-red" : ""
+                pathname === "/registry" ? "text-wedding-red" : ""
               }`}
             >
               REGISTRY

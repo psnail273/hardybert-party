@@ -1,12 +1,9 @@
-import Navigation from "@/components/Navigation";
 import Image from "next/image";
-import Footer from "@/components/Footer";
 export default function Travel() {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <div className="relative w-full max-w-md mx-auto px-2 md:px-4">
-        <div className="h-[6vh] md:h-[3.5vh] flex items-center justify-center">
+    <div className="">
+      <div className="relative w-full max-w-lg mx-auto px-2 md:px-4">
+        <div className="h-[6vh] flex items-center justify-center">
           <Image
             src="/TRAVEL.png"
             alt="Travel"
@@ -23,56 +20,23 @@ export default function Travel() {
         <p>6300 Clayton Rd, Richmond Heights, MO 63117</p>
         <a
           className="text-wedding-purple"
-          href="https://www.cheshirestl.com/"
+          href="https://reservations.travelclick.com/98391?groupID=4699322"
           target="_blank"
           rel="noopener noreferrer"
         >
-          https://www.cheshirestl.com/
+          Link to book with our room block
         </a>
         <br />
         <br />
         <p className="max-w-4xl mx-auto px-4">
           The Cheshire Inn is a family favorite boutique hotel in the Dogtown
           neighborhood just a few minutes from St. James. We have a wedding
-          block there for $185 a night, follow this link or call (314) 932-7858
-          and reference the &ldquo;Hardy/Hilbert Wedding Room Block.&rdquo;
+          block there for $185 a night, follow the link above or call (314)
+          932-7858 and reference the &ldquo;Hardy/Hilbert Wedding Room
+          Block.&rdquo; Must book by{" "}
+          <span className="font-semibold underline">August 5th</span> to get the
+          discounted rate.
         </p>
-      </section>
-
-      <section className="text-center pt-6 sm:pt-5 md:pt-4">
-        <p className="max-w-4xl mx-auto px-4">
-          If you&apos;re wanting to stay within walking distance of the
-          reception at The City Museum, there are multiple hotel options located
-          in downtown St. Louis. Here are two close to the City Museum:
-        </p>
-      </section>
-
-      <section className="text-center pt-6 sm:pt-5 md:pt-4">
-        <p className="font-semibold text-wedding-red">THE LAST HOTEL</p>
-        <p>1501 Washington Ave, St. Louis, MO 63103</p>
-        <a
-          className="text-wedding-purple"
-          href="https://thelasthotelstl.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          https://thelasthotelstl.com/
-        </a>
-      </section>
-
-      <section className="text-center pt-6 sm:pt-5 md:pt-4">
-        <p className="font-semibold text-wedding-red">
-          21C MUSEUM HOTEL ST LOUIS
-        </p>
-        <p>1528 Locust St, St. Louis, MO 63103</p>
-        <a
-          className="text-wedding-purple"
-          href="https://www.21cmuseumhotels.com/stlouis/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          https://www.21cmuseumhotels.com/stlouis/
-        </a>
       </section>
 
       <section className="text-center pt-6 sm:pt-5 md:pt-4">
@@ -85,9 +49,10 @@ export default function Travel() {
       </section>
 
       <br />
+      <br />
 
-      <div className="relative w-full max-w-md mx-auto px-2 md:px-4">
-        <div className="h-[6vh] md:h-[3.5vh] flex items-center justify-center">
+      <div className="relative w-full max-w-lg mx-auto px-2 md:px-4">
+        <div className="h-[6vh] flex items-center justify-center">
           <Image
             src="/THINGSTODO.png"
             alt="Things to Do"
@@ -136,7 +101,7 @@ export default function Travel() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          https://www.forestparkforever.org/visit
+          forestparkforever.org
         </a>
       </section>
 
@@ -156,10 +121,9 @@ export default function Travel() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          https://www.missouribotanicalgarden.org/
+          missouribotanicalgarden.org
         </a>
       </section>
-      <Footer />
     </div>
   );
 }

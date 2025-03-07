@@ -1,13 +1,10 @@
-import Footer from "@/components/Footer";
-import Navigation from "@/components/Navigation";
 import Image from "next/image";
 
 export default function Details() {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <div className="relative w-full max-w-md mx-auto px-2 md:px-4">
-        <div className="h-[6vh] md:h-[3.5vh] flex items-center justify-center">
+    <div className="">
+      <div className="relative w-full max-w-lg mx-auto px-2 md:px-4">
+        <div className="h-[6vh] flex items-center justify-center">
           <Image
             src="/WEDDINGCEREMONY.png"
             alt="Wedding Ceremony"
@@ -26,11 +23,12 @@ export default function Details() {
         <p className="font-semibold">ST. JAMES THE GREATER CATHOLIC CHURCH</p>
         <p>6401 Wade Ave, St. Louis, MO 63139</p>
       </section>
-      <br></br>
-      <br></br>
 
-      <div className="relative w-full max-w-md mx-auto px-2 md:px-4">
-        <div className="h-[6vh] md:h-[3.5vh] flex items-center justify-center">
+      <br />
+      <br />
+
+      <div className="relative w-full max-w-lg mx-auto px-2 md:px-4">
+        <div className="h-[6vh] flex items-center justify-center">
           <Image
             src="/RECEPTION.png"
             alt="Reception"
@@ -49,7 +47,6 @@ export default function Details() {
         <p className="font-semibold">CITY MUSEUM - ARCHITECTURE HALL</p>
         <p>750 N 16th St, St. Louis, MO 63103</p>
       </section>
-      <Footer />
     </div>
   );
 }
