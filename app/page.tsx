@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import ImageCarousel from "@/components/ImageCarousel";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   // Array of Heart images - update with your actual image paths
@@ -20,18 +21,19 @@ export default function Home() {
       <Navigation />
 
       {/* Names */}
-      <div className="relative w-1/2 lg:w-1/3 xl:w-1/4 mx-auto">
+      <div className="relative w-full max-w-md mx-auto px-4">
         <Image
           src="/NANDMMARRIED.png"
           alt="Nicholas and Margaret"
           width={1955}
           height={1063}
+          className="w-full h-auto"
           priority
         />
       </div>
 
       {/* Carousel of Heart Images */}
-      <div className="my-8 w-1/3 mx-auto">
+      <div className="my-8 w-full max-w-mdmx-auto px-4">
         <ImageCarousel
           images={heartImages}
           interval={6000}
@@ -41,15 +43,17 @@ export default function Home() {
       </div>
 
       {/* Wedding details */}
-      <div className="relative w-1/2 lg:w-1/3 xl:w-1/4 mx-auto">
+      <div className="relative w-full max-w-md mx-auto px-4">
         <Image
           src="/DATE.png"
           alt="The Big Day"
           width={1313}
           height={690}
+          className="w-full h-auto"
           priority
         />
       </div>
+      <Footer />
     </div>
   );
 }

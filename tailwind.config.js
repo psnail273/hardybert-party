@@ -15,6 +15,8 @@ module.exports = {
         "wedding-yellow": "#ffcc66",
         "wedding-red": "#FF666D",
         "wedding-pink": "#F97198",
+        "wedding-purple": "#E9C5DA",
+        "wedding-green": "#5DE8A5",
       },
     },
   },
