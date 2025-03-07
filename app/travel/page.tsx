@@ -2,17 +2,16 @@ import Image from "next/image";
 export default function Travel() {
   return (
     <div className="">
-      <div className="relative w-full max-w-lg mx-auto px-2 md:px-4">
-        <div className="h-[6vh] flex items-center justify-center">
-          <Image
-            src="/TRAVEL.png"
-            alt="Travel"
-            width={2031}
-            height={224}
-            className="w-auto h-full"
-            priority
-          />
-        </div>
+      <div className="relative w-full px-2 md:px-4 flex justify-center">
+        <Image
+          src="/TRAVEL.png"
+          alt="Travel"
+          width={2031}
+          height={224}
+          className="h-image-sm md:h-image-md lg:h-image-lg"
+          style={{ objectFit: "contain" }}
+          priority
+        />
       </div>
 
       <section className="text-center pt-6 sm:pt-5 md:pt-4">
@@ -51,17 +50,16 @@ export default function Travel() {
       <br />
       <br />
 
-      <div className="relative w-full max-w-lg mx-auto px-2 md:px-4">
-        <div className="h-[6vh] flex items-center justify-center">
-          <Image
-            src="/THINGSTODO.png"
-            alt="Things to Do"
-            width={1049}
-            height={218}
-            className="w-auto h-full"
-            priority
-          />
-        </div>
+      <div className="relative w-full px-2 md:px-4 flex justify-center">
+        <Image
+          src="/THINGSTODO.png"
+          alt="Things to Do"
+          width={1049}
+          height={218}
+          className="h-image-sm md:h-image-md lg:h-image-lg"
+          style={{ objectFit: "contain" }}
+          priority
+        />
       </div>
 
       <section className="text-center pt-6 sm:pt-5 md:pt-4">

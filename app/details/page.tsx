@@ -3,17 +3,16 @@ import Image from "next/image";
 export default function Details() {
   return (
     <div className="">
-      <div className="relative w-full max-w-lg mx-auto px-2 md:px-4">
-        <div className="h-[6vh] flex items-center justify-center">
-          <Image
-            src="/WEDDINGCEREMONY.png"
-            alt="Wedding Ceremony"
-            width={2031}
-            height={224}
-            className="w-auto h-full"
-            priority
-          />
-        </div>
+      <div className="relative w-full px-2 md:px-4 flex justify-center">
+        <Image
+          src="/WEDDINGCEREMONY.png"
+          alt="Wedding Ceremony"
+          width={2031}
+          height={224}
+          className="h-image-sm md:h-image-md lg:h-image-lg"
+          style={{ objectFit: "contain" }}
+          priority
+        />
       </div>
 
       <section className="text-center py-2 sm:py-4 md:py-6 lg:py-8">
@@ -27,17 +26,16 @@ export default function Details() {
       <br />
       <br />
 
-      <div className="relative w-full max-w-lg mx-auto px-2 md:px-4">
-        <div className="h-[6vh] flex items-center justify-center">
-          <Image
-            src="/RECEPTION.png"
-            alt="Reception"
-            width={1049}
-            height={218}
-            className="w-auto h-full"
-            priority
-          />
-        </div>
+      <div className="relative w-full px-2 md:px-4 flex justify-center">
+        <Image
+          src="/RECEPTION.png"
+          alt="Reception"
+          width={1049}
+          height={218}
+          className="h-image-sm md:h-image-md lg:h-image-lg"
+          style={{ objectFit: "contain" }}
+          priority
+        />
       </div>
 
       <section className="text-center py-2 sm:py-4 md:py-6 lg:py-8">

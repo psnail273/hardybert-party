@@ -18,6 +18,11 @@ module.exports = {
         "wedding-purple": "#E9C5DA",
         "wedding-green": "#5DE8A5",
       },
+      height: {
+        "image-sm": "40px", // Small screens
+        "image-md": "50px", // Medium screens
+        "image-lg": "60px", // Large screens
+      },
     },
   },
   plugins: [],

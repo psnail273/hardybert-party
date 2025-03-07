@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="">
       {/* Names */}
-      <div className="relative w-full max-w-md mx-auto px-4">
+      <div className="relative w-full max-w-xl mx-auto px-4">
         <Image
           src="/NANDMMARRIED.png"
           alt="Nicholas and Margaret"
@@ -39,7 +39,7 @@ export default function Home() {
       </div>
 
       {/* Wedding details */}
-      <div className="relative w-full max-w-md mx-auto px-4">
+      <div className="relative w-full max-w-xl mx-auto px-4">
         <Image
           src="/DATE.png"
           alt="The Big Day"
