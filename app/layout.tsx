@@ -13,6 +13,11 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Nicholas Hilbert and Margaret Hardy Wedding Website",
   description: "#Hardybert",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
