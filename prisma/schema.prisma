@@ -24,7 +24,8 @@ model Invitee {
   id                          Int       @id @default(autoincrement())
   name                        String    @unique
   updatedAt                   DateTime  @updatedAt
-  dietaryRestrictions         Boolean   @default(false)
+  dieteryRestriction          Boolean   @default(false)
+  hasPlusOneOption            Boolean   @default(false)
   plusOne                     Boolean   @default(false)
   plusOneName                 String?   @unique
   plusOneDietaryRestrictions  Boolean?  @default(false)
