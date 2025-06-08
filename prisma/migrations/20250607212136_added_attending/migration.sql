@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Invitee" ADD COLUMN     "hasRSVPed" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "isAttending" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "plusOneHasRSVPed" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "plusOneIsAttending" BOOLEAN NOT NULL DEFAULT false;

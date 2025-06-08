@@ -85,7 +85,7 @@ export default function Navigation() {
                 HOME
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/details"
                 className={`hover:underline ${
@@ -95,7 +95,7 @@ export default function Navigation() {
               >
                 DETAILS
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 href="/travel"
@@ -144,7 +144,7 @@ export default function Navigation() {
               HOME
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               href="/details"
               className={`hover:underline ${
@@ -153,7 +153,7 @@ export default function Navigation() {
             >
               DETAILS
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               href="/travel"

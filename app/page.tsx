@@ -1,8 +1,8 @@
-import Image from "next/image";
 import ImageCarousel from "@/components/ImageCarousel";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
-  // Array of Heart images - update with your actual image paths
+export default function Details() {
   const heartImages = [
     "/HEART1.png",
     "/HEART2.png",
@@ -15,17 +15,75 @@ export default function Home() {
   ];
 
   return (
-    <div className="">
-      {/* Names */}
-      <div className="relative w-full max-w-xl mx-auto px-4">
+    <div className="flex flex-col justify-center gap-8 md:gap-12">
+      <div className="flex flex-col w-full gap-2 justify-center items-center">
+        <Link href="/rsvp" className="hover:opacity-70 transition-opacity">
+          <Image
+            src="/RSVP_RED_ARROWS.png"
+            alt="Wedding Ceremony"
+            width={883}
+            height={283}
+            className="h-image-md lg:h-image-lg"
+            style={{ objectFit: "contain" }}
+            priority
+          />
+        </Link>
+        <p>Kindly RSVP by July 26th</p>
+      </div>
+
+      <div className="flex flex-col w-full gap-4 justify-center items-center text-center">
         <Image
-          src="/NANDMMARRIED.png"
-          alt="Nicholas and Margaret"
-          width={1955}
-          height={1063}
-          className="w-full h-auto"
+          src="/BIGNAMES_GRAPHIC.png"
+          alt="Big Names Info"
+          width={6867}
+          height={6972}
+          className="px-2 md:px-0 h-[120px] md:h-[150px] lg:h-[180px]"
+          style={{ objectFit: "contain" }}
           priority
         />
+      </div>
+
+      <div className="flex flex-col w-full gap-4 justify-center items-center text-center">
+        <Image
+          src="/WEDDINGCEREMONY.png"
+          alt="Wedding Ceremony"
+          width={2031}
+          height={224}
+          className="px-2 md:px-0 h-image-sm md:h-image-md lg:h-image-lg"
+          style={{ objectFit: "contain" }}
+          priority
+        />
+        <section>
+          <p>Saturday, September 6th, 2025</p>
+          <p className="font-semibold">1:00 PM - 1:30 PM</p>
+          <p className="font-semibold">ST. JAMES THE GREATER CATHOLIC CHURCH</p>
+          <p>6401 Wade Ave, St. Louis, MO 63139</p>
+        </section>
+      </div>
+
+      <div className="flex flex-col w-full gap-4 justify-center items-center text-center">
+        <Image
+          src="/RECEPTION.png"
+          alt="Reception"
+          width={1049}
+          height={218}
+          className="h-image-sm md:h-image-md lg:h-image-lg"
+          style={{ objectFit: "contain" }}
+          priority
+        />
+        <section>
+          <p>Saturday, September 6th, 2025</p>
+          <p className="font-semibold">5:00 PM - 10:00 PM</p>
+          <p className="font-semibold">CITY MUSEUM - ARCHITECTURE HALL</p>
+          <p>750 N 16th St, St. Louis, MO 63103</p>
+          <br />
+          <p className="mx-auto max-w-[48rem]">
+            Even though Architecture Hall will not be open until 5pm, your
+            invitation includes free all-day access to the City Museum should
+            you wish to explore the many levels and exhibits between the
+            ceremony and the reception!
+          </p>
+        </section>
       </div>
 
       {/* Carousel of Heart Images */}
@@ -35,18 +93,6 @@ export default function Home() {
           interval={6000}
           width={2393}
           height={2308}
-        />
-      </div>
-
-      {/* Wedding details */}
-      <div className="relative w-full max-w-xl mx-auto px-4">
-        <Image
-          src="/DATE.png"
-          alt="The Big Day"
-          width={1313}
-          height={690}
-          className="w-full h-auto"
-          priority
         />
       </div>
     </div>

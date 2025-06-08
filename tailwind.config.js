@@ -22,6 +22,7 @@ module.exports = {
         "image-sm": "40px", // Small screens
         "image-md": "50px", // Medium screens
         "image-lg": "60px", // Large screens
+        "image-xl": "200px", // Extra large screens
       },
     },
   },

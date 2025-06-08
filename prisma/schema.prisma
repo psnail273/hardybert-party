@@ -22,11 +22,14 @@ model Household {
 
 model Invitee {
   id                          Int       @id @default(autoincrement())
+  initialName                 String    @unique
   name                        String    @unique
+  isAttending                 Boolean   @default(false)
+  hasRSVPed                   Boolean   @default(false)
   updatedAt                   DateTime  @updatedAt
   dieteryRestriction          Boolean   @default(false)
   hasPlusOneOption            Boolean   @default(false)
-  plusOne                     Boolean   @default(false)
+  plusOneIsAttending          Boolean   @default(false)
   plusOneName                 String?   @unique
   plusOneDietaryRestrictions  Boolean?  @default(false)
   household                   Household @relation(fields: [householdId], references: [id])
