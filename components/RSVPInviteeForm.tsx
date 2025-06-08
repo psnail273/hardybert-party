@@ -122,7 +122,9 @@ export default function RSVPInviteeForm({
       setSuccess(true);
     } catch (err) {
       setError(
-        "Something went wrong. Please try again or contact Nick at (314)825-5234."
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or contact Nick at (314)825-5234."
       );
     } finally {
       setIsLoading(false);

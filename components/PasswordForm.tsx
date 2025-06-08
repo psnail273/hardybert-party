@@ -30,7 +30,11 @@ export default function RSVPForm() {
 
       window.location.reload();
     } catch (err) {
-      setError("Something went wrong. Please contact Nick at (314) 825-5234.");
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or contact Nick at (314)825-5234."
+      );
     } finally {
       setIsLoading(false);
     }
