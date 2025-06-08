@@ -25,6 +25,9 @@ COPY --from=deps /app/yarn.lock* ./
 COPY --from=deps /app/pnpm-lock.yaml* ./
 COPY . .
 
+# Generate Prisma Client
+RUN npx prisma generate
+
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
