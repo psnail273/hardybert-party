@@ -2,31 +2,73 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Invitee } from "@prisma/client";
+import { HouseholdWithInvitees, InviteeWithHousehold } from "@/types/prisma";
 
 interface SearchFormProps {
-  onInviteeFound?: (invitee: Invitee) => void;
+  onInviteeFound?: (
+    invitee: InviteeWithHousehold,
+    household: HouseholdWithInvitees
+  ) => void;
 }
 
 export default function SearchForm({ onInviteeFound }: SearchFormProps) {
   const [inviteeName, setInviteeName] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [multipleMatches, setMultipleMatches] = useState<Invitee[]>([]);
+  const [multipleMatches, setMultipleMatches] = useState<
+    InviteeWithHousehold[]
+  >([]);
+  const [response, setResponse] = useState<{
+    inviteesFound: number;
+    invitees: InviteeWithHousehold[];
+    household: HouseholdWithInvitees;
+    message: string;
+  } | null>(null);
 
-  const handleInviteeSelect = (invitee: Invitee) => {
+  const handleInviteeSelect = (
+    invitee: InviteeWithHousehold,
+    household: HouseholdWithInvitees
+  ) => {
     if (onInviteeFound) {
-      onInviteeFound(invitee);
+      onInviteeFound(invitee, household);
     }
-    setInviteeName(""); // Clear the form
-    setMultipleMatches([]); // Clear the matches list
+    setInviteeName("");
+    setMultipleMatches([]);
+  };
+
+  const handleSelectInvitee = async (invitee: InviteeWithHousehold) => {
+    try {
+      const response = await fetch(
+        `/api/household?householdId=${invitee.householdId}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const data = await response.json();
+
+      if (onInviteeFound && data.household) {
+        onInviteeFound(invitee, data.household);
+      }
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or contact Nick at (314)825-5234."
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setIsLoading(true);
-    setMultipleMatches([]); // Clear any previous matches
+    setMultipleMatches([]);
 
     try {
       const response = await fetch(`/api/rsvp?invitee=${inviteeName}`, {
@@ -37,18 +79,19 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
       });
 
       const data = await response.json();
+      setResponse(data);
 
       if (!response.ok) {
         setError(data.message);
         return;
       }
 
-      if (data.invitees.length === 1) {
+      if (data.inviteesFound === 1) {
         if (onInviteeFound) {
-          onInviteeFound(data.invitees[0]);
+          onInviteeFound(data.invitee, data.household);
         }
-        setInviteeName(""); // Clear the form after successful search
-      } else if (data.invitees.length > 1) {
+        // setInviteeName("");
+      } else if (data.inviteesFound > 1) {
         setMultipleMatches(data.invitees);
       }
     } catch (err) {
@@ -81,18 +124,18 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
           className="w-full bg-wedding-yellow text-wedding-blue hover:bg-wedding-yellow/80"
           disabled={isLoading}
         >
-          {isLoading ? "Searching..." : "Search"}
+          {isLoading ? "Loading..." : "Search"}
         </Button>
         {multipleMatches.length > 0 && (
           <div className="mt-4 space-y-4">
             <p className="text-wedding-green text-center">
-              Multiple matches found. Please select your name or search again:
+              {response?.message}
             </p>
             <div className="space-y-4">
               {multipleMatches.map((invitee) => (
                 <button
                   key={invitee.id}
-                  onClick={() => handleInviteeSelect(invitee)}
+                  onClick={() => handleSelectInvitee(invitee)}
                   className="w-full rounded-md border border-wedding-yellow bg-wedding-blue px-3 py-2 text-wedding-yellow hover:bg-wedding-yellow hover:text-wedding-blue transition-colors"
                 >
                   {invitee.name}

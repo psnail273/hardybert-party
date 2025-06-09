@@ -53,6 +53,13 @@ jobs:
           rm -rf /tmp/.buildx-cache
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
+      - name: Create .env file from secrets
+        run: |
+          cat > .env << EOF
+          DATABASE_URL=${{ secrets.DATABASE_URL }}
+          RSVP_PASSWORD=${{ secrets.RSVP_PASSWORD }}
+          EOF
+
       - name: Deploy container
         run: |
           docker pull git.stuffworks.net/psnail273/hardybert-wedding-website:latest
@@ -62,5 +69,6 @@ jobs:
             --name hardybert-wedding-website \
             --restart unless-stopped \
             --network caddy-network \
+            --env-file .env \
             -p 3005:3000 \
             git.stuffworks.net/psnail273/hardybert-wedding-website:latest

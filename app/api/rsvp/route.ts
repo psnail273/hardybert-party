@@ -38,16 +38,33 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  return new Response(
-    JSON.stringify({
-      invitees,
-      message:
-        invitees.length === 1
-          ? "Found exact match"
-          : `Found ${invitees.length} potential matches. Please select the correct name.`,
-    }),
-    {
-      status: 200,
-    }
-  );
+  if (invitees.length === 1) {
+    const household = await prisma.household.findUnique({
+      where: { id: invitees[0].householdId },
+      include: { invitees: true },
+    });
+
+    return new Response(
+      JSON.stringify({
+        inviteesFound: 1,
+        invitee: invitees[0],
+        household,
+        message: "Found exact match",
+      }),
+      {
+        status: 200,
+      }
+    );
+  } else {
+    return new Response(
+      JSON.stringify({
+        inviteesFound: invitees.length,
+        invitees,
+        message: `Found ${invitees.length} potential matches. Please select the correct name.`,
+      }),
+      {
+        status: 200,
+      }
+    );
+  }
 }
