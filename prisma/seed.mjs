@@ -10,19 +10,10 @@ async function main() {
       invitees: {
         create: [
           {
-            initialName: "Nicholas Hilbert",
             name: "Nicholas Hilbert",
-            hasPlusOneOption: false,
           },
           {
-            initialName: "Margaret Hardy",
             name: "Margaret Hardy",
-            hasPlusOneOption: false,
-          },
-          {
-            initialName: "Test",
-            name: "Test",
-            hasPlusOneOption: true,
           },
         ],
       },

@@ -14,25 +14,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Household {
-  id          Int       @id @default(autoincrement())
-  name        String    @unique
-  invitees    Invitee[] 
-}
 
 model Invitee {
   id                          Int       @id @default(autoincrement())
-  initialName                 String    @unique
   name                        String    @unique
-  isAttending                 Boolean   @default(false)
-  hasRSVPed                   Boolean   @default(false)
-  updatedAt                   DateTime  @updatedAt
-  dieteryRestriction          Boolean   @default(false)
-  hasPlusOneOption            Boolean   @default(false)
-  plusOneIsAttending          Boolean   @default(false)
-  plusOneName                 String?   @unique
-  plusOneDietaryRestrictions  Boolean?  @default(false)
+  isAttending                 Boolean?  
   household                   Household @relation(fields: [householdId], references: [id])
   householdId                 Int
 }
 
+model Household {
+  id                          Int       @id @default(autoincrement())
+  name                        String    @unique
+  hasRSVPed                   Boolean   @default(false)
+  dieteryRestrictions         Boolean?  
+  notes                       String?   
+  updatedAt                   DateTime  @updatedAt
+  invitees                    Invitee[] 
+}
