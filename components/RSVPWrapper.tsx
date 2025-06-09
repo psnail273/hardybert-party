@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Invitee } from "@prisma/client";
 import SearchForm from "./SearchForm";
 import RSVPInviteeForm from "./RSVPInviteeForm";
 import { HouseholdWithInvitees, InviteeWithHousehold } from "@/types/prisma";

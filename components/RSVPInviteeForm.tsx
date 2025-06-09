@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Invitee } from "@prisma/client";
 import { HouseholdWithInvitees, InviteeWithHousehold } from "@/types/prisma";
 import Image from "next/image";
 
@@ -12,14 +11,9 @@ interface RSVPInviteeFormProps {
   onReset?: () => void;
 }
 
-export default function RSVPInviteeForm({
-  invitee,
-  household,
-  onReset,
-}: RSVPInviteeFormProps) {
+export default function RSVPInviteeForm({ household }: RSVPInviteeFormProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false);
   const [dietaryRestrictions, setDietaryRestrictions] = useState<
     boolean | undefined
   >(() => {
@@ -96,7 +90,10 @@ export default function RSVPInviteeForm({
   }
 
   return (
-    <form className="flex flex-col gap-4 justify-center items-center w-full max-w-md md:max-w-lg lg:max-w-xl mx-auto">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-4 justify-center items-center w-full max-w-md md:max-w-lg lg:max-w-xl mx-auto"
+    >
       <h1 className="text-2xl font-bold w-full text-center">
         {household.name}
       </h1>

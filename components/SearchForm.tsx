@@ -25,16 +25,16 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
     message: string;
   } | null>(null);
 
-  const handleInviteeSelect = (
-    invitee: InviteeWithHousehold,
-    household: HouseholdWithInvitees
-  ) => {
-    if (onInviteeFound) {
-      onInviteeFound(invitee, household);
-    }
-    setInviteeName("");
-    setMultipleMatches([]);
-  };
+  // const handleInviteeSelect = (
+  //   invitee: InviteeWithHousehold,
+  //   household: HouseholdWithInvitees
+  // ) => {
+  //   if (onInviteeFound) {
+  //     onInviteeFound(invitee, household);
+  //   }
+  //   setInviteeName("");
+  //   setMultipleMatches([]);
+  // };
 
   const handleSelectInvitee = async (invitee: InviteeWithHousehold) => {
     try {
