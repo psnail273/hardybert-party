@@ -323,13 +323,13 @@ export default function RSVPInviteeForm({ household }: RSVPInviteeFormProps) {
           disabled={
             isLoading ||
             Object.values(attendanceState).some(
-              (value) =>
-                value === undefined ||
-                Object.values(attendanceState).every(
-                  (value) =>
-                    value !== undefined && hasDietaryRestrictions === undefined
-                )
-            )
+              (value) => value === undefined
+            ) ||
+            (Object.values(attendanceState).every(
+              (value) => value !== undefined
+            ) &&
+              Object.values(attendanceState).some((value) => value === true) &&
+              hasDietaryRestrictions === undefined)
           }
         >
           {isLoading ? "Submitting..." : "Submit RSVP"}
