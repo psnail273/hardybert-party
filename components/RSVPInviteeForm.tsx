@@ -126,7 +126,7 @@ export default function RSVPInviteeForm({ household }: RSVPInviteeFormProps) {
             Thank you for RSVPing!
           </h2>
           <p className="text-wedding-yellow">
-            Thank you for RSVPing! Your RSVP has been submitted successfully.
+            Your RSVP has been submitted successfully.
           </p>
         </div>
       </div>

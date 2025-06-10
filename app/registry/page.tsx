@@ -15,9 +15,9 @@ export default function Registry() {
         />
       </div>
       <div className="flex flex-col gap-8 md:gap-12 lg:gap-16 justify-center items-center w-full">
-        <div className="flex flex-col gap-2 relative w-full max-w-[32rem]">
+        <div className="flex flex-col relative w-full max-w-[32rem]">
           <h1 className="text-center font-semibold text-wedding-red">
-            Gift Registry
+            GIFT REGISTRY
           </h1>
           <p className="text-sm text-center">
             We are registered at Amazon.com.
@@ -26,7 +26,7 @@ export default function Registry() {
             href="https://www.amazon.com/wedding/share/HARDYBERT"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity"
+            className="py-2 hover:opacity-80 transition-opacity"
           >
             <Image
               src="/AMZ_REGISTRY.webp"
@@ -38,9 +38,9 @@ export default function Registry() {
             />
           </a>
         </div>
-        <div className="flex flex-col relative w-full gap-2 max-w-[32rem]">
+        <div className="flex flex-col relative w-full max-w-[32rem]">
           <h1 className="text-center font-semibold text-wedding-red">
-            Honeymoon Fund
+            HONEYMOON FUND
           </h1>
           <p className="text-sm text-center">
             We are planning on an epic road trip to the East Coast, including
@@ -52,7 +52,7 @@ export default function Registry() {
             href="https://account.venmo.com/u/Nicholas-Hilbert-psnail"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition-opacity"
+            className="py-2 hover:opacity-80 transition-opacity"
           >
             <Image
               src="/VENMO.jpg"

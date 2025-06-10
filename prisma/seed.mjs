@@ -6,14 +6,14 @@ async function main() {
   // Create some example households
   const hardybertHousehold = await prisma.household.create({
     data: {
-      name: "Hardybert Family",
+      name: "Hilbert Parents",
       invitees: {
         create: [
           {
-            name: "Nicholas Hilbert",
+            name: "Jeffrey Hilbert",
           },
           {
-            name: "Margaret Hardy",
+            name: "Theresa Hilbert",
           },
         ],
       },
