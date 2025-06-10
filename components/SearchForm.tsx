@@ -25,17 +25,6 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
     message: string;
   } | null>(null);
 
-  // const handleInviteeSelect = (
-  //   invitee: InviteeWithHousehold,
-  //   household: HouseholdWithInvitees
-  // ) => {
-  //   if (onInviteeFound) {
-  //     onInviteeFound(invitee, household);
-  //   }
-  //   setInviteeName("");
-  //   setMultipleMatches([]);
-  // };
-
   const handleSelectInvitee = async (invitee: InviteeWithHousehold) => {
     try {
       const response = await fetch(
@@ -107,16 +96,25 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
   return (
     <div className="flex flex-col items-center justify-center">
       <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-4">
-        <div className="space-y-2">
-          <label htmlFor="invitee">Enter Invitee Name to find RSVP</label>
+        <div className="space-y-2 text-center">
+          <label htmlFor="invitee" className="text-sm">
+            Please enter the first and last name of one member of your party
+            below. If you&apos;re responding for you and a guest (or your
+            family), you&apos;ll be able to RSVP for your entire group on the
+            next page.
+          </label>
           <input
             id="invitee"
             value={inviteeName}
             onChange={(e) => setInviteeName(e.target.value)}
             className="w-full rounded-md border border-wedding-yellow bg-wedding-blue px-3 py-2 text-wedding-yellow placeholder:text-wedding-yellow/50 focus:outline-none focus:ring-2 focus:ring-wedding-yellow"
-            placeholder="Enter invitee name"
+            placeholder="First and Last name"
             required
           />
+          <p className="text-xs text-left">
+            Ex. Nicholas Hilbert (not The Hilbert Family or Mr. and Mrs.
+            Hilbert)
+          </p>
         </div>
         {error && <p className="text-wedding-red text-center">{error}</p>}
         <Button
@@ -144,6 +142,9 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
             </div>
           </div>
         )}
+        <p className="text-sm text-center">
+          Having trouble? Reach out to Nick and Margaret at (314) 680-4553.
+        </p>
       </form>
     </div>
   );

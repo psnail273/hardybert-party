@@ -40,10 +40,28 @@ export default function Travel() {
 
       <section className="text-center pt-6 sm:pt-5 md:pt-4">
         <p className="max-w-4xl mx-auto px-4">
-          There are always a multitude of air bnbs and hotels available. If
-          you&apos;re unsure of an area while looking for accomodations, or want
-          specific neighborhood recommendations, contact Margaret at (314)
-          680-4553.
+          There are many hotel and airbnb options available. If you would like
+          specific neighborhood recommendations while looking for
+          accommodations, contact Margaret at (314) 680-4553.
+        </p>
+      </section>
+
+      <section className="text-center pt-6 sm:pt-5 md:pt-4">
+        <p className="max-w-4xl mx-auto px-4">
+          For the wedding ceremony at St. James, there are two parking lots
+          available along with street parking. The larger lot is accessible via
+          Tamm Ave right across the street from St. James. The parking lot
+          behind St. James is accessed via Wade Ave and is reserved for guests
+          who require the accessible entrance without stairs.
+        </p>
+      </section>
+
+      <section className="text-center pt-6 sm:pt-5 md:pt-4">
+        <p className="max-w-4xl mx-auto px-4">
+          For the reception, the City Museum has a paid secure lot enclosed by
+          serpents at 16th & Delmar. There are several other paid lots and
+          street parking nearby. Uber and Lyft ridesharing is also easily
+          available in St. Louis and encouraged.
         </p>
       </section>
 
@@ -65,22 +83,22 @@ export default function Travel() {
       <section className="text-center pt-6 sm:pt-5 md:pt-4">
         <p className="font-semibold text-wedding-red">CITY MUSEUM</p>
         <p className="max-w-4xl mx-auto px-4">
-          Even though the wedding reception at the City Museum does not start
-          until 5pm, guests have all day access. This is one of our favorite
-          places and we&apos;re so excited to celebrate there with you all. A
-          change of clothes is recommended if you&apos;re planning on playing
-          and exploring! If you&apos;ve never been, it is a large playground/art
-          sculpture built in an old shoe factory. A wonderful documentary came
-          out last year about the museum&apos;s creator, Bob Cassily. You can
-          view the trailer here:
+          Even though the reception at the City Museum does not start until 5pm,
+          your invitation includes free all-day access on the day of the
+          wedding, Saturday September 6th. The City Museum is a one of a kind
+          playground/art sculpture built in an old shoe factory that includes a
+          cave system, a 10-story slide, a bar inside a log cabin, a giant whale
+          and more. This is one of our favorite places and we&apos;re so excited
+          to celebrate there with you all. Comfortable shoes are recommended if
+          you plan on exploring!
         </p>
         <a
           className="text-wedding-purple"
-          href="https://youtu.be/KjKKPyPhRl4?si=Wc2TJZ_QQjz78Fmk"
+          href="https://citymuseum.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Youtube link
+          citymuseum.org
         </a>
       </section>
 
@@ -91,7 +109,8 @@ export default function Travel() {
           away from St. James. One of the largest urban parks in the country,
           Forest Park is home to the St. Louis Art Museum, the Zoo, the Science
           Center, and the Missouri History Museum, which are all free! It also
-          has many walking paths and trails.
+          includes many walking paths, trails, and the award winning Ann
+          O&apos;C. Albrecht Nature Playscape.
         </p>
         <a
           className="text-wedding-purple"
@@ -109,17 +128,38 @@ export default function Travel() {
         </p>
         <p className="max-w-4xl mx-auto px-4">
           If you&apos;re in the mood for plants, another favorite spot of ours
-          is the Missouri Botanical Garden. It is located in the historic Shaw
-          neighborhood and is close to Tower Grove Park, another great walking
-          park.
+          is the Missouri Botanical Garden, which includes one of the largest
+          Japanese gardens in North America. It is located in the historic Shaw
+          neighborhood and is close to the beautiful Tower Grove Park.
         </p>
         <a
           className="text-wedding-purple"
-          href="https://www.missouribotanicalgarden.org/"
+          href="https://www.missouribotanicalgarden.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           missouribotanicalgarden.org
+        </a>
+      </section>
+
+      <section className="text-center pt-6 sm:pt-5 md:pt-4">
+        <p className="font-semibold text-wedding-red">
+          GATEWAY ARCH NATIONAL PARK
+        </p>
+        <p className="max-w-4xl mx-auto px-4">
+          Explore the smallest national park in the United States! Learn about
+          the early days of St. Louis, America&apos;s journey west, and even the
+          architecture contest that led to construction of this symbol of our
+          city. You can also take a tram ride to the top for an amazing view!
+          Tram tickets should be bought in advance, they sell out often.
+        </p>
+        <a
+          className="text-wedding-purple"
+          href="https://www.gatewayarch.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          gatewayarch.com
         </a>
       </section>
     </div>

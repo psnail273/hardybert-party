@@ -15,8 +15,13 @@ export default function Registry() {
         />
       </div>
       <div className="flex flex-col gap-8 md:gap-12 lg:gap-16 justify-center items-center w-full">
-        <div className="flex flex-col gap-2 relative w-full max-w-[24rem]">
-          <h1 className="text-center text-2xl font-bold">Gift Registry</h1>
+        <div className="flex flex-col gap-2 relative w-full max-w-[32rem]">
+          <h1 className="text-center font-semibold text-wedding-red">
+            Gift Registry
+          </h1>
+          <p className="text-sm text-center">
+            We are registered at Amazon.com.
+          </p>
           <a
             href="https://www.amazon.com/wedding/share/HARDYBERT"
             target="_blank"
@@ -28,13 +33,21 @@ export default function Registry() {
               alt="Amazon Registry"
               width={1864}
               height={1190}
-              className="mx-auto rounded-2xl shadow-2xl"
+              className="mx-auto rounded-3xl shadow-3xl"
               style={{ objectFit: "contain" }}
             />
           </a>
         </div>
-        <div className="flex flex-col relative w-full gap-2 max-w-[24rem]">
-          <h1 className="text-center text-2xl font-bold">Honeymoon Fund</h1>
+        <div className="flex flex-col relative w-full gap-2 max-w-[32rem]">
+          <h1 className="text-center font-semibold text-wedding-red">
+            Honeymoon Fund
+          </h1>
+          <p className="text-sm text-center">
+            We are planning on an epic road trip to the East Coast, including
+            visiting the Spy Museum in D.C., eating lobster in Maine, visiting
+            Montreal, seeing Niagara Falls, and exploring whatever other
+            roadside attractions we find along the way!
+          </p>
           <a
             href="https://account.venmo.com/u/Nicholas-Hilbert-psnail"
             target="_blank"
@@ -46,7 +59,7 @@ export default function Registry() {
               alt="Venmo QR Code"
               width={819}
               height={940}
-              className="mx-auto rounded-2xl shadow-2xl"
+              className="mx-auto rounded-3xl shadow-3xl"
               style={{ objectFit: "contain" }}
             />
           </a>

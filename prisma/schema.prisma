@@ -27,8 +27,11 @@ model Household {
   id                          Int       @id @default(autoincrement())
   name                        String    @unique
   hasRSVPed                   Boolean   @default(false)
-  dieteryRestrictions         Boolean?  
+  hasDietaryRestrictions      Boolean?  
+  dietaryRestrictions         String?   
   notes                       String?   
   updatedAt                   DateTime  @updatedAt
+  children12                  Int       @default(0)
+  children3                   Int       @default(0)
   invitees                    Invitee[] 
 }

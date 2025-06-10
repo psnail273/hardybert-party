@@ -82,7 +82,7 @@ export default function Navigation() {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                HOME
+                DETAILS
               </Link>
             </li>
             {/* <li>
@@ -141,7 +141,7 @@ export default function Navigation() {
                 pathname === "/" ? "text-wedding-red" : ""
               }`}
             >
-              HOME
+              DETAILS
             </Link>
           </li>
           {/* <li>

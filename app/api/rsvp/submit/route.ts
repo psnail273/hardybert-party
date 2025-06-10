@@ -1,82 +1,65 @@
-// import { type NextRequest } from "next/server";
-// import { PrismaClient } from "@prisma/client";
+import { type NextRequest } from "next/server";
+import { PrismaClient } from "@prisma/client";
+import { HouseholdWithInvitees } from "@/types/prisma";
 
-export async function POST() {
-  // const data: {
-  //   inviteeId: number;
-  //   isAttending: string;
-  //   isNameSpelledCorrectly: string;
-  //   fixedName: string;
-  //   hasPlusOneOption: boolean;
-  //   dieteryRestriction: string;
-  //   plusOne: string;
-  //   plusOneName: string;
-  //   plusOneDietaryRestrictions: string;
-  // } = await request.json();
+export async function POST(request: NextRequest) {
+  const data: {
+    household: HouseholdWithInvitees;
+    attendanceState: Record<number, boolean | undefined>;
+    children12: number;
+    children3: number;
+    hasDietaryRestrictions: boolean;
+    dietaryRestrictionsNotes: string;
+    notes: string;
+  } = await request.json();
 
-  // const prisma = new PrismaClient();
+  const prisma = new PrismaClient();
 
-  // const invitee = await prisma.invitee.findUnique({
-  //   where: { id: data.inviteeId },
-  // });
-
-  // if (!invitee) {
-  //   return new Response(JSON.stringify({ message: "Invitee not found" }), {
-  //     status: 404,
-  //   });
-  // }
-
-  // if (data.isNameSpelledCorrectly === "no" && data.fixedName.length < 2) {
-  //   return new Response(
-  //     JSON.stringify({ message: `Name ${data.fixedName} is too short. ` }),
-  //     { status: 400 }
-  //   );
-  // }
-  // const fixedName = data.fixedName;
-  // const isAttending = data.isAttending === "yes";
-  // const dieteryRestriction = data.dieteryRestriction === "yes";
-  // if (!data.hasPlusOneOption) {
-  //   await prisma.invitee.update({
-  //     where: { id: data.inviteeId },
-  //     data: {
-  //       isAttending: isAttending,
-  //       // hasRSVPed: true,
-  //       name: fixedName,
-  //       // dieteryRestriction: dieteryRestriction,
-  //     },
-  //   });
-  // } else {
-  //   const plusOne = data.plusOne === "yes";
-  //   if (plusOne && data.plusOneName.length < 2) {
-  //     return new Response(
-  //       JSON.stringify({
-  //         message: `Plus one name ${data.plusOneName} is too short. `,
-  //       }),
-  //       { status: 400 }
-  //     );
-  //   }
-  //   const plusOneName = data.plusOneName;
-  //   const plusOneDietaryRestrictions =
-  //     data.plusOneDietaryRestrictions === "yes";
-
-  //   await prisma.invitee.update({
-  //     where: { id: data.inviteeId },
-  //     data: {
-  //       isAttending: isAttending,
-  //       // hasRSVPed: true,
-  //       name: fixedName,
-  //       // dieteryRestriction: dieteryRestriction,
-  //       // plusOneIsAttending: plusOne,
-  //       // plusOneName: plusOneName,
-  //       // plusOneDietaryRestrictions: plusOneDietaryRestrictions,
-  //     },
-  //   });
-  // }
-
-  return new Response(
-    JSON.stringify({ message: "RSVP ENDPOINT HIT (NOT SUBMITTED)" }),
-    {
-      status: 200,
+  try {
+    // Update each invitee's attendance status
+    for (const [inviteeId, isAttending] of Object.entries(
+      data.attendanceState
+    )) {
+      if (isAttending !== undefined) {
+        await prisma.invitee.update({
+          where: { id: parseInt(inviteeId) },
+          data: {
+            isAttending: isAttending,
+          },
+        });
+      }
     }
-  );
+
+    // Update household RSVP information
+    await prisma.household.update({
+      where: { id: data.household.id },
+      data: {
+        hasRSVPed: true,
+        hasDietaryRestrictions: data.hasDietaryRestrictions,
+        dietaryRestrictions: data.hasDietaryRestrictions
+          ? data.dietaryRestrictionsNotes
+          : null,
+        children12: data.children12,
+        children3: data.children3,
+        notes: data.notes,
+      },
+    });
+
+    return new Response(
+      JSON.stringify({ message: "RSVP submitted successfully!" }),
+      {
+        status: 200,
+      }
+    );
+  } catch (error) {
+    console.error("Error submitting RSVP:", error);
+    return new Response(
+      JSON.stringify({ message: "Failed to submit RSVP. Please try again." }),
+      {
+        status: 500,
+      }
+    );
+  } finally {
+    await prisma.$disconnect();
+  }
 }

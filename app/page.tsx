@@ -15,7 +15,7 @@ export default function Details() {
   ];
 
   return (
-    <div className="flex flex-col justify-center gap-8 md:gap-12">
+    <div className="flex flex-col justify-center gap-8 md:gap-16">
       <div className="flex flex-col w-full gap-2 justify-center items-center">
         <Link href="/rsvp" className="hover:opacity-70 transition-opacity">
           <Image

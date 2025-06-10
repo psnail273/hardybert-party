@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Household" ADD COLUMN     "children12" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "children3" INTEGER NOT NULL DEFAULT 0;
