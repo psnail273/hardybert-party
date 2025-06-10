@@ -211,13 +211,23 @@ export default function RSVPInviteeForm({ household }: RSVPInviteeFormProps) {
               <div className="flex items-center space-x-2">
                 <p>Number of children aged 3 to 12?</p>
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   id="kids-12-and-under"
                   name="kids-12-and-under"
-                  value={children12}
+                  value={children12 === 0 ? "" : children12}
                   min={0}
                   max={household.invitees.length}
-                  onChange={(e) => setChildren12(Number(e.target.value))}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    // Only allow numeric characters
+                    const numericValue = value.replace(/[^0-9]/g, "");
+                    setChildren12(
+                      Number(numericValue === "" ? 0 : Number(numericValue))
+                    );
+                  }}
+                  placeholder="0"
                   className="text-center w-10 rounded-md border border-wedding-yellow text-wedding-yellow focus:outline-none focus:ring-2 focus:ring-wedding-yellow bg-wedding-blue"
                 />
               </div>
@@ -233,13 +243,23 @@ export default function RSVPInviteeForm({ household }: RSVPInviteeFormProps) {
               <div className="flex items-center space-x-2">
                 <p>Number of children under the age of 3?</p>
                 <input
-                  type="number"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   id="kids-under-3"
                   name="kids-under-3"
-                  value={children3}
+                  value={children3 === 0 ? "" : children3}
                   min={0}
                   max={household.invitees.length}
-                  onChange={(e) => setChildren3(Number(e.target.value))}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    // Only allow numeric characters
+                    const numericValue = value.replace(/[^0-9]/g, "");
+                    setChildren3(
+                      Number(numericValue === "" ? 0 : Number(numericValue))
+                    );
+                  }}
+                  placeholder="0"
                   className="text-center w-10 rounded-md border border-wedding-yellow text-wedding-yellow focus:outline-none focus:ring-2 focus:ring-wedding-yellow bg-wedding-blue"
                 />
               </div>
