@@ -27,24 +27,24 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/package*.json ./
 
-# Copy only necessary files first (better caching)
-COPY prisma ./prisma/
+# Copy config files first (change least frequently)
 COPY next.config.* ./
 COPY tailwind.config.* ./
 COPY tsconfig.json ./
 COPY postcss.config.* ./
 
-# Generate Prisma Client early
+# Copy Prisma schema and generate client
+COPY prisma ./prisma/
 RUN npx prisma generate
 
-# Copy source code last (changes most frequently)
-COPY src ./src/
+# Copy source code in order of likely change frequency
 COPY public ./public/
-COPY components ./components/
+COPY types ./types/
 COPY lib ./lib/
+COPY components ./components/
 COPY app ./app/
-COPY pages ./pages/
-COPY styles ./styles/
+
+# Copy any remaining files (like README, etc.)
 COPY . .
 
 # Disable telemetry for faster builds
