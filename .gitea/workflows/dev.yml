@@ -5,19 +5,11 @@ on:
       - develop
 
 jobs:
-  build-and-deploy:
+  dev:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Cache Docker layers
-        uses: actions/cache@v4
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -37,21 +29,19 @@ jobs:
           tags: |
             git.stuffworks.net/psnail273/hardybert-wedding-website-dev:latest
             git.stuffworks.net/psnail273/hardybert-wedding-website-dev:${{ github.sha }}
-          cache-from: |
-            type=registry,ref=git.stuffworks.net/psnail273/hardybert-wedding-website-dev:latest
-            type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+          cache-from: type=registry,ref=git.stuffworks.net/psnail273/hardybert-wedding-website-dev:buildcache
+          cache-to: type=registry,ref=git.stuffworks.net/psnail273/hardybert-wedding-website-dev:buildcache,mode=max
 
-      - name: Move cache
+      - name: Clean up old images
         run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+          # Remove old hardybert-wedding-website-dev images (keep latest)
+          docker images git.stuffworks.net/psnail273/hardybert-wedding-website-dev --format "table {{.Repository}}:{{.Tag}}\t{{.ID}}" | grep -v "latest\|buildcache" | awk 'NR>1 {print $2}' | xargs -r docker rmi || true
 
       - name: Create .env file from secrets
         run: |
           cat > .env << EOF
           DATABASE_URL=${{ secrets.DATABASE_URL_DEV }}
-          RSVP_PASSWORD=${{ secrets.RSVP_PASSWORD_DEV }}
+          RSVP_PASSWORD=${{ secrets.RSVP_PASSWORD }}
           EOF
 
       - name: Deploy container
