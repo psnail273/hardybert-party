@@ -64,5 +64,4 @@ jobs:
             --restart unless-stopped \
             --network caddy-network \
             --env-file .env \
-            -p 3005:3000 \
             git.stuffworks.net/psnail273/hardybert-wedding-website-dev:latest
