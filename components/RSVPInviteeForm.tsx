@@ -205,31 +205,29 @@ export default function RSVPInviteeForm({ household }: RSVPInviteeFormProps) {
       {/* Kids 12 and under - Only show if attending and at least 3 people are in the family */}
       {Object.values(attendanceState).some((value) => value === true) &&
         household.invitees.length >= 2 && (
-          <div className="flex flex-col gap-4 w-full">
-            <div className="flex justify-center items-center space-x-4 w-full">
-              <div className="flex items-center space-x-2">
-                <p>Number of children aged 3 to 12?</p>
-                <input
-                  type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  id="kids-12-and-under"
-                  name="kids-12-and-under"
-                  value={children12 === 0 ? "" : children12}
-                  min={0}
-                  max={household.invitees.length}
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    // Only allow numeric characters
-                    const numericValue = value.replace(/[^0-9]/g, "");
-                    setChildren12(
-                      Number(numericValue === "" ? 0 : Number(numericValue))
-                    );
-                  }}
-                  placeholder="0"
-                  className="text-center w-10 rounded-md border border-wedding-yellow text-wedding-yellow focus:outline-none focus:ring-2 focus:ring-wedding-yellow bg-wedding-blue"
-                />
-              </div>
+          <div className="flex flex-col gap-4 w-4/5 md:w-4/7 lg:w-2/3">
+            <div className="flex justify-between items-center w-full space-x-3">
+              <p># of children aged 3 to 12?</p>
+              <input
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                id="kids-12-and-under"
+                name="kids-12-and-under"
+                value={children12 === 0 ? "" : children12}
+                min={0}
+                max={household.invitees.length}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow numeric characters
+                  const numericValue = value.replace(/[^0-9]/g, "");
+                  setChildren12(
+                    Number(numericValue === "" ? 0 : Number(numericValue))
+                  );
+                }}
+                placeholder="0"
+                className="text-center w-10 rounded-md border border-wedding-yellow text-wedding-yellow focus:outline-none focus:ring-2 focus:ring-wedding-yellow bg-wedding-blue"
+              />
             </div>
           </div>
         )}
@@ -237,32 +235,36 @@ export default function RSVPInviteeForm({ household }: RSVPInviteeFormProps) {
       {/* Kids under 3 - Only show if attending and at least 3 people are in the family */}
       {Object.values(attendanceState).some((value) => value === true) &&
         household.invitees.length >= 2 && (
-          <div className="flex flex-col gap-4 w-full">
-            <div className="flex justify-center items-center space-x-4 w-full">
-              <div className="flex items-center space-x-2">
-                <p>Number of children under the age of 3?</p>
-                <input
-                  type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  id="kids-under-3"
-                  name="kids-under-3"
-                  value={children3 === 0 ? "" : children3}
-                  min={0}
-                  max={household.invitees.length}
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    // Only allow numeric characters
-                    const numericValue = value.replace(/[^0-9]/g, "");
-                    setChildren3(
-                      Number(numericValue === "" ? 0 : Number(numericValue))
-                    );
-                  }}
-                  placeholder="0"
-                  className="text-center w-10 rounded-md border border-wedding-yellow text-wedding-yellow focus:outline-none focus:ring-2 focus:ring-wedding-yellow bg-wedding-blue"
-                />
-              </div>
+          <div className="flex flex-col gap-4 w-4/5 md:w-4/7 lg:w-2/3">
+            <div className="flex justify-between items-center w-full space-x-3">
+              <p># of children under the age of 3?</p>
+              <input
+                type="text"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                id="kids-under-3"
+                name="kids-under-3"
+                value={children3 === 0 ? "" : children3}
+                min={0}
+                max={household.invitees.length}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow numeric characters
+                  const numericValue = value.replace(/[^0-9]/g, "");
+                  setChildren3(
+                    Number(numericValue === "" ? 0 : Number(numericValue))
+                  );
+                }}
+                placeholder="0"
+                className="text-center w-10 rounded-md border border-wedding-yellow text-wedding-yellow focus:outline-none focus:ring-2 focus:ring-wedding-yellow bg-wedding-blue"
+              />
             </div>
+          </div>
+        )}
+
+      {Object.values(attendanceState).some((value) => value === true) &&
+        household.invitees.length >= 2 && (
+          <div className="flex flex-col gap-4 w-full">
             <Image
               src="/DOTLINE.png"
               alt="Decorative dotted line"
