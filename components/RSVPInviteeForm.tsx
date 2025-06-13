@@ -282,7 +282,7 @@ export default function RSVPInviteeForm({ household }: RSVPInviteeFormProps) {
         <div className="flex flex-col gap-4 w-full">
           <div className="flex justify-center items-center space-x-4 w-full">
             <div className="flex items-center space-x-2">
-              <p>Are there any dietary restriction?</p>
+              <p>Are there any dietary restrictions?</p>
               <input
                 type="radio"
                 id="dietery-yes"
