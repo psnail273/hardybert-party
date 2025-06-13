@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
         mode: "insensitive", // Case-insensitive search
       },
     },
-    take: 5, // Limit to 5 results to avoid overwhelming the user
+    // take: 5, // Limit to 5 results to avoid overwhelming the user
   });
 
   if (invitees.length === 0) {
@@ -60,7 +60,7 @@ export async function GET(request: NextRequest) {
       JSON.stringify({
         inviteesFound: invitees.length,
         invitees,
-        message: `Found ${invitees.length} potential matches. Please select the correct name.`,
+        message: `Found ${invitees.length} potential matches. Please select the correct name below or search again.`,
       }),
       {
         status: 200,

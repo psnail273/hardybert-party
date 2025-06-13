@@ -98,10 +98,8 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
       <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-4">
         <div className="space-y-2 text-center">
           <label htmlFor="invitee" className="text-sm">
-            Please enter the first and last name of one member of your party
-            below. If you&apos;re responding for you and a guest (or your
-            family), you&apos;ll be able to RSVP for your entire group on the
-            next page.
+            Please enter the name of one member of your party below. You&apos;ll
+            be able to RSVP for your entire group on the next page.
           </label>
           <input
             id="invitee"
@@ -111,10 +109,6 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
             placeholder="First and Last name"
             required
           />
-          <p className="text-xs text-left">
-            Ex. Nicholas Hilbert (not The Hilbert Family or Mr. and Mrs.
-            Hilbert)
-          </p>
         </div>
         {error && <p className="text-wedding-red text-center">{error}</p>}
         <Button

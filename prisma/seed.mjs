@@ -1,26 +1,23 @@
 import { PrismaClient } from "@prisma/client";
+import fs from "fs";
 
 const prisma = new PrismaClient();
 
 async function main() {
-  // Create some example households
-  const hardybertHousehold = await prisma.household.create({
-    data: {
-      name: "Hilbert Parents",
-      invitees: {
-        create: [
-          {
-            name: "Jeffrey Hilbert",
-          },
-          {
-            name: "Theresa Hilbert",
-          },
-        ],
+  const guestlist = fs.readFileSync("guestlist.txt", "utf8").split("\r\n");
+  for (const line of guestlist) {
+    const householdInvitees = line.split("\t");
+    const householdName = householdInvitees[0].trim();
+    const invitees = householdInvitees[1].split(",");
+    await prisma.household.create({
+      data: {
+        name: householdName,
+        invitees: {
+          create: invitees.map((invitee) => ({ name: invitee.trim() })),
+        },
       },
-    },
-  });
-
-  console.log("Database has been seeded with example data!");
+    });
+  }
 }
 
 main()
