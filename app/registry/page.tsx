@@ -43,10 +43,9 @@ export default function Registry() {
             HONEYMOON FUND
           </h1>
           <p className="text-sm text-center">
-            We are planning on an epic road trip to the East Coast, including
-            visiting the Spy Museum in D.C., eating lobster in Maine, visiting
-            Montreal, seeing Niagara Falls, and exploring whatever other
-            roadside attractions we find along the way!
+            We&apos;re planning on an East Coast scenic road trip! Hoping to
+            explore the D.C. Spy Museum, Maine, Montreal, and possibly Niagara
+            Falls.
           </p>
           <a
             href="https://account.venmo.com/u/Nicholas-Hilbert-psnail"
