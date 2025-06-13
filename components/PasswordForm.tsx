@@ -63,6 +63,9 @@ export default function RSVPForm() {
         >
           {isLoading ? "Verifying..." : "Submit"}
         </Button>
+        <p className="text-sm text-center">
+          Having trouble? Reach out to Nick and Margaret at (314) 680-4553.
+        </p>
       </form>
     </div>
   );

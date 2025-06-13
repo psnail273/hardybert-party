@@ -1,0 +1,57 @@
+name: Build and Deploy Docker Container
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Private Registry
+        uses: docker/login-action@v3
+        with:
+          registry: git.stuffworks.net
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            git.stuffworks.net/psnail273/hardybert-wedding-website-dev:latest
+            git.stuffworks.net/psnail273/hardybert-wedding-website-dev:${{ github.sha }}
+          cache-from: type=registry,ref=git.stuffworks.net/psnail273/hardybert-wedding-website-dev:buildcache
+          cache-to: type=registry,ref=git.stuffworks.net/psnail273/hardybert-wedding-website-dev:buildcache,mode=max
+
+      - name: Clean up old images
+        run: |
+          # Remove old hardybert-wedding-website-dev images (keep latest)
+          docker images git.stuffworks.net/psnail273/hardybert-wedding-website-dev --format "table {{.Repository}}:{{.Tag}}\t{{.ID}}" | grep -v "latest\|buildcache" | awk 'NR>1 {print $2}' | xargs -r docker rmi || true
+
+      - name: Create .env file from secrets
+        run: |
+          cat > .env << EOF
+          DATABASE_URL=${{ secrets.DATABASE_URL_DEV }}
+          RSVP_PASSWORD=${{ secrets.RSVP_PASSWORD }}
+          EOF
+
+      - name: Deploy container
+        run: |
+          docker pull git.stuffworks.net/psnail273/hardybert-wedding-website-dev:latest
+          docker stop hardybert-wedding-website-dev || true
+          docker rm hardybert-wedding-website-dev || true
+          docker run -d \
+            --name hardybert-wedding-website-dev \
+            --restart unless-stopped \
+            --network caddy-network \
+            --env-file .env \
+            git.stuffworks.net/psnail273/hardybert-wedding-website-dev:latest
