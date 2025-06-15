@@ -4,7 +4,7 @@ import fs from "fs";
 const prisma = new PrismaClient();
 
 async function main() {
-  const guestlist = fs.readFileSync("guestlist.txt", "utf8").split("\r\n");
+  const guestlist = fs.readFileSync("guestlist-dev.txt", "utf8").split("\r\n");
   for (const line of guestlist) {
     const householdInvitees = line.split("\t");
     const householdName = householdInvitees[0].trim();
