@@ -41,7 +41,8 @@ jobs:
         run: |
           cat > .env << EOF
           DATABASE_URL=${{ secrets.DATABASE_URL_DEV }}
-          RSVP_PASSWORD=${{ secrets.RSVP_PASSWORD }}
+          RSVP_PASSWORD=${{ secrets.RSVP_PASSWORD_DEV }}
+          NEXT_PUBLIC_DEV_MODE=true
           EOF
 
       - name: Deploy container
