@@ -50,6 +50,10 @@ COPY . .
 # Disable telemetry for faster builds
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# Add this before your npm run build step
+ARG NEXT_PUBLIC_DEV_MODE
+ENV NEXT_PUBLIC_DEV_MODE=$NEXT_PUBLIC_DEV_MODE
+
 # Build with cache mount for Next.js cache
 RUN --mount=type=cache,target=/app/.next/cache \
     if [ -f yarn.lock ]; then yarn run build; \

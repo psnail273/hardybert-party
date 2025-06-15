@@ -26,6 +26,8 @@ jobs:
         with:
           context: .
           push: true
+          build-args: |
+            NEXT_PUBLIC_DEV_MODE=false
           tags: |
             git.stuffworks.net/psnail273/hardybert-wedding-website:latest
             git.stuffworks.net/psnail273/hardybert-wedding-website:${{ github.sha }}

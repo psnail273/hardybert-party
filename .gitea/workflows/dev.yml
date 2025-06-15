@@ -26,6 +26,8 @@ jobs:
         with:
           context: .
           push: true
+          build-args: |
+            NEXT_PUBLIC_DEV_MODE=true
           tags: |
             git.stuffworks.net/psnail273/hardybert-wedding-website-dev:latest
             git.stuffworks.net/psnail273/hardybert-wedding-website-dev:${{ github.sha }}
@@ -42,7 +44,6 @@ jobs:
           cat > .env << EOF
           DATABASE_URL=${{ secrets.DATABASE_URL_DEV }}
           RSVP_PASSWORD=${{ secrets.RSVP_PASSWORD_DEV }}
-          NEXT_PUBLIC_DEV_MODE=true
           EOF
 
       - name: Deploy container
