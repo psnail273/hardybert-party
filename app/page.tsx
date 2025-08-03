@@ -28,7 +28,6 @@ export default function Details() {
             priority
           />
         </Link>
-        <p>Kindly RSVP by July 26th</p>
       </div>
 
       <div className="flex flex-col w-full gap-4 justify-center items-center text-center">
@@ -58,6 +57,14 @@ export default function Details() {
           <p className="font-semibold">1:00 PM - 1:30 PM</p>
           <p className="font-semibold">ST. JAMES THE GREATER CATHOLIC CHURCH</p>
           <p>6401 Wade Ave, St. Louis, MO 63139</p>
+          <br />
+          <p className="max-w-4xl mx-auto px-4">
+            For the wedding ceremony at St. James, there are two parking lots
+            available along with street parking. The larger lot is accessible
+            via Tamm Ave right across the street from St. James. The parking lot
+            behind St. James is accessed via Wade Ave and is reserved for guests
+            who require the accessible entrance without stairs.
+          </p>
         </section>
       </div>
 
@@ -79,11 +86,27 @@ export default function Details() {
           <br />
           <p className="mx-auto max-w-[48rem]">
             Even though Architecture Hall will not be open until 5pm, your
-            invitation includes free all-day access to the City Museum should
-            you wish to explore the many levels and exhibits between the
-            ceremony and the reception!
+            invitation includes all-day access to the City Museum should you
+            wish to explore the many levels and exhibits between the ceremony
+            and the reception!
+          </p>
+          <br />
+          <p className="max-w-4xl mx-auto px-4">
+            For the reception, the City Museum has a paid secure lot enclosed by
+            serpents at 16th & Delmar. There are several other paid lots and
+            street parking nearby. Uber and Lyft ridesharing is also easily
+            available in St. Louis and encouraged.
           </p>
         </section>
+      </div>
+
+      <div className="flex flex-col w-full justify-center items-center text-center">
+        <p className="font-semibold text-wedding-red">WHAT TO WEAR</p>
+        <p className="mx-auto max-w-[48rem]">
+          Dress nicely, as you would for a daytime celebration or church. Suits
+          and ties are welcome, but not required. Early September in St. Louis
+          is generally pretty warm, so comfort is encouraged.
+        </p>
       </div>
 
       {/* Carousel of Heart Images */}

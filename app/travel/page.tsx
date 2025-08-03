@@ -46,25 +46,6 @@ export default function Travel() {
         </p>
       </section>
 
-      <section className="text-center pt-6 sm:pt-5 md:pt-4">
-        <p className="max-w-4xl mx-auto px-4">
-          For the wedding ceremony at St. James, there are two parking lots
-          available along with street parking. The larger lot is accessible via
-          Tamm Ave right across the street from St. James. The parking lot
-          behind St. James is accessed via Wade Ave and is reserved for guests
-          who require the accessible entrance without stairs.
-        </p>
-      </section>
-
-      <section className="text-center pt-6 sm:pt-5 md:pt-4">
-        <p className="max-w-4xl mx-auto px-4">
-          For the reception, the City Museum has a paid secure lot enclosed by
-          serpents at 16th & Delmar. There are several other paid lots and
-          street parking nearby. Uber and Lyft ridesharing is also easily
-          available in St. Louis and encouraged.
-        </p>
-      </section>
-
       <br />
       <br />
 
@@ -84,8 +65,8 @@ export default function Travel() {
         <p className="font-semibold text-wedding-red">CITY MUSEUM</p>
         <p className="max-w-4xl mx-auto px-4">
           Even though the reception at the City Museum does not start until 5pm,
-          your invitation includes free all-day access on the day of the
-          wedding, Saturday September 6th. The City Museum is a one of a kind
+          your invitation includes all-day access on the day of the wedding,
+          Saturday September 6th. The City Museum is a one of a kind
           playground/art sculpture built in an old shoe factory that includes a
           cave system, a 10-story slide, a bar inside a log cabin, a giant whale
           and more. This is one of our favorite places and we&apos;re so excited
