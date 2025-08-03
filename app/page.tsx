@@ -28,7 +28,6 @@ export default function Details() {
             priority
           />
         </Link>
-        <p>Kindly RSVP by July 26th</p>
       </div>
 
       <div className="flex flex-col w-full gap-4 justify-center items-center text-center">
@@ -82,6 +81,13 @@ export default function Details() {
             invitation includes free all-day access to the City Museum should
             you wish to explore the many levels and exhibits between the
             ceremony and the reception!
+          </p>
+          <br />
+          <p className="font-semibold">What to wear</p>
+          <p className="mx-auto max-w-[48rem]">
+            Dress nicely, as you would for a daytime event or church. Suits and
+            ties are welcome, but not required. Early September in St. Louis is
+            generally pretty warm, so comfort is encouraged.
           </p>
         </section>
       </div>
