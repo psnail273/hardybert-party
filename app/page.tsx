@@ -103,9 +103,8 @@ export default function Details() {
       <div className="flex flex-col w-full justify-center items-center text-center">
         <p className="font-semibold text-wedding-red">WHAT TO WEAR</p>
         <p className="mx-auto max-w-[48rem]">
-          <span className="font-semibold">Sunday Best:</span> Dress nicely, as
-          you would for a daytime celebration or church. Suits and ties are
-          welcome, but not required.
+          <span className="font-semibold">SUMMER COCKTAIL/SEMI-FORMAL:</span>{" "}
+          Dressy, yet comfortable!
         </p>
       </div>
 
