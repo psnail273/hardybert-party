@@ -103,9 +103,9 @@ export default function Details() {
       <div className="flex flex-col w-full justify-center items-center text-center">
         <p className="font-semibold text-wedding-red">WHAT TO WEAR</p>
         <p className="mx-auto max-w-[48rem]">
-          Dress nicely, as you would for a daytime celebration or church. Suits
-          and ties are welcome, but not required. Early September in St. Louis
-          is generally pretty warm, so comfort is encouraged.
+          <span className="font-semibold">Sunday Best:</span> Dress nicely, as
+          you would for a daytime celebration or church. Suits and ties are
+          welcome, but not required.
         </p>
       </div>
 
