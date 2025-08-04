@@ -105,8 +105,7 @@ export default function Details() {
         <p className="mx-auto max-w-[48rem]">
           <span className="font-semibold">Sunday Best:</span> Dress nicely, as
           you would for a daytime celebration or church. Suits and ties are
-          welcome, but not required. Early September in St. Louis is generally
-          pretty warm, so comfort is encouraged.
+          welcome, but not required.
         </p>
       </div>
 
