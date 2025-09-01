@@ -91,9 +91,9 @@ export default function Details() {
             invitation includes all-day access to the City Museum should you
             wish to explore between the ceremony and the reception! Walk to the
             Front Desk and say you are there for the Hardy/Hilbert wedding and
-            you will be given a wristband. Cocktails and hors d'oeuvres start at
-            5pm in Architecture Hall, and introductions begin around 5:45,
-            followed by dinner and dancing!
+            you will be given a wristband. Cocktails and hors d&apos;oeuvres
+            start at 5pm in Architecture Hall, and introductions begin around
+            5:45, followed by dinner and dancing!
           </p>
           <br />
           <p className="max-w-4xl mx-auto px-4">
