@@ -61,9 +61,11 @@ export default function Details() {
           <p className="max-w-4xl mx-auto px-4">
             For the wedding ceremony at St. James, there are two parking lots
             available along with street parking. The larger lot is accessible
-            via Tamm Ave right across the street from St. James. The parking lot
-            behind St. James is accessed via Wade Ave and is reserved for guests
-            who require the accessible entrance without stairs.
+            via Tamm Ave right across the street from St. James. The small
+            parking lot behind St. James is accessed via Wade Ave and is
+            reserved for guests who require an entrance with fewer stairs. A
+            wheelchair accessible entrance without any stairs is located off of
+            Nashville Ave.
           </p>
         </section>
       </div>
@@ -87,15 +89,18 @@ export default function Details() {
           <p className="mx-auto max-w-[48rem]">
             Even though Architecture Hall will not be open until 5pm, your
             invitation includes all-day access to the City Museum should you
-            wish to explore the many levels and exhibits between the ceremony
-            and the reception!
+            wish to explore between the ceremony and the reception! Walk to the
+            Front Desk and say you are there for the Hardy/Hilbert wedding and
+            you will be given a wristband. Cocktails and hors d&apos;oeuvres
+            start at 5pm in Architecture Hall, and introductions begin around
+            5:45, followed by dinner and dancing!
           </p>
           <br />
           <p className="max-w-4xl mx-auto px-4">
-            For the reception, the City Museum has a paid secure lot enclosed by
-            serpents at 16th & Delmar. There are several other paid lots and
-            street parking nearby. Uber and Lyft ridesharing is also easily
-            available in St. Louis and encouraged.
+            For the reception, the City Museum has a $15 paid secure lot
+            enclosed by serpents at 16th & Delmar. There are several other paid
+            lots and street parking nearby. Uber and Lyft ridesharing is also
+            easily available in St. Louis and encouraged.
           </p>
         </section>
       </div>
@@ -103,8 +108,8 @@ export default function Details() {
       <div className="flex flex-col w-full justify-center items-center text-center">
         <p className="font-semibold text-wedding-red">WHAT TO WEAR</p>
         <p className="mx-auto max-w-[48rem]">
-          <span className="font-semibold">SUMMER COCKTAIL/SEMI-FORMAL:</span>{" "}
-          Dressy, yet comfortable!
+          <span className="font-semibold">COCKTAIL/SEMI-FORMAL:</span> Dressy,
+          yet comfortable!
         </p>
       </div>
 
