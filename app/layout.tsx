@@ -3,7 +3,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import DevModeBanner from "@/components/DevModeBanner";
+// import DevModeBanner from "@/components/DevModeBanner";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${openSans.className} tracking-default bg-wedding-blue text-wedding-yellow antialiased`}
       >
-        <DevModeBanner />
+        {/* <DevModeBanner /> */}
         <Navigation />
         {children}
         <Footer />

@@ -46,7 +46,7 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
       setError(
         err instanceof Error
           ? err.message
-          : "Something went wrong. Please try again or contact Nick at (314)825-5234."
+          : "Something went wrong. Please try again or contact Nick."
       );
     } finally {
       setIsLoading(false);
@@ -87,7 +87,7 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
       setError(
         err instanceof Error
           ? err.message
-          : "Something went wrong. Please try again or contact Nick at (314)825-5234."
+          : "Something went wrong. Please try again or contact Nick."
       );
     } finally {
       setIsLoading(false);
@@ -136,9 +136,14 @@ export default function SearchForm({ onInviteeFound }: SearchFormProps) {
             </div>
           </div>
         )}
-        <p className="text-sm text-center">
-          Having trouble? Reach out to Nick and Margaret at (314) 680-4553.
-        </p>
+        {process.env.NEXT_PUBLIC_DEV_MODE === "true" && (
+          <p className="text-sm text-center">
+            Type &ldquo;t&rdquo; to search for test data.
+          </p>
+        )}
+        {/* <p className="text-sm text-center">
+          Having trouble? Reach out to Nick and Margaret.
+        </p> */}
       </form>
     </div>
   );

@@ -103,7 +103,7 @@ export default function RSVPInviteeForm({ household }: RSVPInviteeFormProps) {
       setError(
         err instanceof Error
           ? err.message
-          : "Something went wrong. Please try again or contact Nick at (314)825-5234."
+          : "Something went wrong. Please try again or contact Nick."
       );
     } finally {
       setIsLoading(false);
@@ -357,7 +357,7 @@ export default function RSVPInviteeForm({ household }: RSVPInviteeFormProps) {
         </Button>
       </div>
       <p className="text-sm text-center">
-        Having trouble? Reach out to Nick and Margaret at (314) 680-4553.
+        Having trouble? Reach out to Nick and Margaret.
       </p>
     </form>
   );
