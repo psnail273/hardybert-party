@@ -10,6 +10,7 @@ A custom wedding website built for the Hardy-Hilbert wedding, featuring RSVP man
 - **Registry Page** – Links to Amazon gift registry and Venmo honeymoon fund
 - **Image Carousel** – Animated photo slideshow showcasing the couple
 - **Dev Mode** – Development banner for testing environments
+- **SEO** – Auto-generated sitemap.xml and robots.txt
 
 ## Tech Stack
 
@@ -66,6 +67,7 @@ Create a `.env` file with:
 ```env
 DATABASE_URL="postgresql://..."
 RSVP_PASSWORD="your-rsvp-password"
+NEXT_PUBLIC_BASE_URL="https://your-domain.com"  # For sitemap/robots.txt
 ```
 
 ### Installation
@@ -124,7 +126,9 @@ docker run -d \
 │   ├── rsvp/          # RSVP page with auth
 │   ├── travel/        # Travel & accommodations
 │   ├── layout.tsx     # Root layout
-│   └── page.tsx       # Home page with event details
+│   ├── page.tsx       # Home page with event details
+│   ├── sitemap.ts     # Auto-generated sitemap.xml
+│   └── robots.ts      # Auto-generated robots.txt
 ├── components/        # React components
 │   ├── ui/            # shadcn/ui components
 │   ├── ImageCarousel.tsx
