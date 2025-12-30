@@ -33,7 +33,7 @@ export default function RSVPForm() {
       setError(
         err instanceof Error
           ? err.message
-          : "Something went wrong. Please try again or contact Nick at (314)825-5234."
+          : "Something went wrong. Please try again or contact Nick"
       );
     } finally {
       setIsLoading(false);
@@ -63,9 +63,11 @@ export default function RSVPForm() {
         >
           {isLoading ? "Verifying..." : "Submit"}
         </Button>
-        <p className="text-sm text-center">
-          Having trouble? Reach out to Nick and Margaret at (314) 680-4553.
-        </p>
+        {process.env.NEXT_PUBLIC_DEV_MODE === "true" && (
+          <p className="text-sm text-center">
+            The password is &ldquo;testing&rdquo;.
+          </p>
+        )}
       </form>
     </div>
   );

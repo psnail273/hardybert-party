@@ -19,8 +19,8 @@ export default function DevModeBanner() {
 
   return (
     <div className="bg-wedding-red text-white text-center py-2 px-4 text-sm font-semibold">
-      🚧 DEVELOPMENT MODE - This is a development environment with test data
-      (RSVP password is &ldquo;testing&rdquo;) 🚧
+      DEVELOPMENT MODE - This is a development environment with test data (RSVP
+      password is &ldquo;testing&rdquo;)
     </div>
   );
 }

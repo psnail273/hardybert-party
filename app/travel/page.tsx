@@ -42,7 +42,7 @@ export default function Travel() {
         <p className="max-w-4xl mx-auto px-4">
           There are many hotel and airbnb options available. If you would like
           specific neighborhood recommendations while looking for
-          accommodations, contact Margaret at (314) 680-4553.
+          accommodations, contact Margaret.
         </p>
       </section>
 
